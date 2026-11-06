@@ -57,9 +57,6 @@ function buildBanner() {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Tejas Rawool — Full Stack Developer and AI Engineer">
 <defs>
-  <clipPath id="avatarClip">
-    <circle cx="155" cy="125" r="72"/>
-  </clipPath>
   <style>
     text { font-family: Inter, -apple-system, 'Segoe UI', Arial, sans-serif; }
     .rise { animation: rise .8s ease-out both; }
@@ -75,29 +72,19 @@ function buildBanner() {
 ${stars}
 ${shootingStars}
 
-<!-- Avatar Section -->
-<g class="rise">
-  <circle cx="155" cy="125" r="80" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
-  <circle cx="155" cy="125" r="75" fill="none" stroke="#39d353" stroke-width="2"/>
-  <image href="${avatarBase64}" x="83" y="53" width="144" height="144" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatarClip)"/>
-</g>
-
-<!-- Subtle Divider Line -->
-<path d="M265 40 V210" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
-
-<!-- Main Details — Pure White Name & Clean Typography -->
+<!-- Centered Typography & Hero Details (Pure White Name) -->
 <g class="rise" style="animation-delay: 0.1s;">
   <!-- Username Handle -->
-  <text x="290" y="68" font-size="13" font-weight="600" letter-spacing="1.5" fill="#8b949e">@tejasrawool186</text>
+  <text x="500" y="66" text-anchor="middle" font-size="13.5" font-weight="600" letter-spacing="1.8" fill="#8b949e">@tejasrawool186</text>
 
   <!-- Name — Completely White -->
-  <text x="288" y="122" font-size="48" font-weight="800" letter-spacing="-1.2" fill="#ffffff">Tejas Rawool</text>
+  <text x="500" y="122" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="-1.2" fill="#ffffff">Tejas Rawool</text>
 
   <!-- Role Title -->
-  <text x="290" y="160" font-size="19" font-weight="600" fill="#f0f6fc">Full Stack Developer <tspan fill="#39d353">&amp;</tspan> AI Engineer</text>
+  <text x="500" y="164" text-anchor="middle" font-size="20" font-weight="600" fill="#f0f6fc">Full Stack Developer <tspan fill="#39d353">&amp;</tspan> AI Engineer</text>
   
   <!-- Bio -->
-  <text x="290" y="190" font-size="13.5" fill="#8b949e">Architecting scalable web platforms, agentic AI workflows, and modern cloud applications.</text>
+  <text x="500" y="196" text-anchor="middle" font-size="14.5" fill="#8b949e">Architecting scalable web platforms, agentic AI workflows, and modern cloud applications.</text>
 </g>
 </svg>`;
 }
@@ -125,4 +112,5 @@ function buildFooter() {
   return fs.readFileSync('assets/footer.svg', 'utf8');
 }
 
-console.log('build-seamless-assets configured.');
+fs.writeFileSync('assets/banner.svg', buildBanner());
+console.log('Built assets/banner.svg (centered hero without avatar).');

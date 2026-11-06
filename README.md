@@ -20,5 +20,5 @@
 </p>
 
 <p align="center">
-  <img src="assets/footer.svg" width="100%" alt="Build Learn Ship" />
+  <img src="assets/footer.svg" width="100%" alt="Every project is a step toward something greater." />
 </p>
