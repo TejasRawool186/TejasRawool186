@@ -75,7 +75,7 @@
 
   <!-- Animated Motivational Message -->
   <text x="342" y="41" class="quote-text" fill="#f0f6fc">
-    &ldquo;Every project is a step toward <tspan fill="url(#textShimmer)" font-weight="700">something greater</tspan>.&rdquo;
+    &#8220;Every project is a step toward <tspan fill="url(#textShimmer)" font-weight="700">something greater</tspan>.&#8221;
   </text>
 </g>
 </svg>

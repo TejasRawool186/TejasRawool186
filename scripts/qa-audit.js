@@ -21,16 +21,17 @@ while ((m = imgRegex.exec(readme))) {
 
 // 2. Validate XML of all SVGs in assets/
 console.log('\n--- Validating SVG XML ---');
+const { execSync } = require('child_process');
 const assets = fs.readdirSync('assets').filter(f => f.endsWith('.svg'));
 let invalidXml = 0;
 for (const file of assets) {
-  const content = fs.readFileSync(path.join('assets', file), 'utf8').trim();
-  if (!content.startsWith('<svg') || !content.endsWith('</svg>')) {
-    console.error(`❌ Malformed SVG root tag: ${file}`);
+  const filePath = path.join('assets', file);
+  try {
+    execSync(`python -c "import xml.etree.ElementTree as ET; ET.parse(r'${filePath}')"`, { stdio: 'pipe' });
+    console.log(`✅ Valid SVG XML: ${file}`);
+  } catch (err) {
+    console.error(`❌ XML Parsing Error in ${file}: ${err.message}`);
     invalidXml++;
-  } else {
-    const openTags = (content.match(/<[a-zA-Z]/g) || []).length;
-    console.log(`✅ Valid SVG structure: ${file} (contains ${openTags} elements)`);
   }
 }
 
