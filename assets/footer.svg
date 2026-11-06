@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 72" width="1000" height="72" role="img" aria-label="Motivational quote: Every project is a step toward something greater.">
+<defs>
+  <style>
+    text { font-family: Inter, -apple-system, 'Segoe UI', Arial, sans-serif; }
+    .rise { animation: rise .8s ease-out both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+    .footer-pill {
+      transition: transform 0.25s ease, filter 0.25s ease;
+      cursor: default;
+    }
+    .footer-pill:hover {
+      filter: drop-shadow(0 0 10px rgba(57, 211, 83, 0.45));
+    }
+    .quote-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rise { animation: none !important; }
+      animate { display: none !important; }
+    }
+  </style>
+
+  <!-- Animated Neon Shimmer Gradient -->
+  <linearGradient id="textShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#39d353">
+      <animate attributeName="stop-color" values="#39d353;#7ee787;#ffffff;#7ee787;#39d353" dur="4.5s" repeatCount="indefinite"/>
+    </stop>
+    <stop offset="50%" stop-color="#7ee787">
+      <animate attributeName="stop-color" values="#7ee787;#ffffff;#39d353;#ffffff;#7ee787" dur="4.5s" repeatCount="indefinite"/>
+    </stop>
+    <stop offset="100%" stop-color="#ffffff">
+      <animate attributeName="stop-color" values="#ffffff;#39d353;#7ee787;#39d353;#ffffff" dur="4.5s" repeatCount="indefinite"/>
+    </stop>
+  </linearGradient>
+
+  <!-- Soft Glow Filter -->
+  <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+
+<!-- Uniform Seamless Background -->
+<rect width="1000" height="72" fill="#0d1117"/>
+
+<!-- Starry Night Background -->
+
+<circle cx="23.0" cy="24.2" r="0.6" fill="#c9d1d9" opacity="0.33"><animate attributeName="opacity" values="0.33;0.58;0.33" dur="4.1s" begin="-2.8s" repeatCount="indefinite"/></circle>
+<circle cx="701.6" cy="49.0" r="0.8" fill="#c9d1d9" opacity="0.65"><animate attributeName="opacity" values="0.65;0.90;0.65" dur="3.7s" begin="-0.7s" repeatCount="indefinite"/></circle>
+<circle cx="883.9" cy="20.1" r="0.9" fill="#c9d1d9" opacity="0.41"><animate attributeName="opacity" values="0.41;0.66;0.41" dur="6.8s" begin="-5.4s" repeatCount="indefinite"/></circle>
+<circle cx="157.3" cy="28.1" r="0.8" fill="#c9d1d9" opacity="0.49"><animate attributeName="opacity" values="0.49;0.74;0.49" dur="4.4s" begin="-2.8s" repeatCount="indefinite"/></circle>
+<circle cx="841.0" cy="48.0" r="0.7" fill="#c9d1d9" opacity="0.55"><animate attributeName="opacity" values="0.55;0.80;0.55" dur="4.5s" begin="-1.2s" repeatCount="indefinite"/></circle>
+<circle cx="110.0" cy="50.0" r="0.6" fill="#c9d1d9" opacity="0.35"><animate attributeName="opacity" values="0.35;0.60;0.35" dur="5.2s" begin="-3.1s" repeatCount="indefinite"/></circle>
+<circle cx="930.0" cy="32.0" r="0.8" fill="#c9d1d9" opacity="0.45"><animate attributeName="opacity" values="0.45;0.70;0.45" dur="3.8s" begin="-1.5s" repeatCount="indefinite"/></circle>
+
+
+<!-- Motivational Footer Pill -->
+<g class="rise footer-pill">
+  <!-- Glowing Breathing Border -->
+  <rect x="303" y="14" width="394" height="44" rx="22" fill="#161b22" stroke="#30363d" stroke-width="1.2">
+    <animate attributeName="stroke" values="#30363d;#238636;#39d353;#238636;#30363d" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Pulsing Active Green Beacon -->
+  <circle cx="326" cy="36" r="4" fill="#39d353" filter="url(#dotGlow)"/>
+  <circle cx="326" cy="36" r="4" fill="none" stroke="#39d353" stroke-width="1.4">
+    <animate attributeName="r" values="4;10;13" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.2;0" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Animated Motivational Message -->
+  <text x="342" y="41" class="quote-text" fill="#f0f6fc">
+    &ldquo;Every project is a step toward <tspan fill="url(#textShimmer)" font-weight="700">something greater</tspan>.&rdquo;
+  </text>
+</g>
+</svg>
