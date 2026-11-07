@@ -37,13 +37,16 @@ async function fetchCalendar(user) {
     const date = /data-date="([^"]+)"/.exec(tag);
     const level = /data-level="(\d)"/.exec(tag);
     if (!id || !date || !level) continue;
+    if (!Object.prototype.hasOwnProperty.call(counts, id[1])) {
+      throw new Error(`Missing contribution count for ${date[1]}`);
+    }
     const lv = parseInt(level[1], 10);
     cells.push({
       row: parseInt(id[2], 10),
       col: parseInt(id[3], 10),
       date: date[1],
       level: lv,
-      count: id[1] in counts ? counts[id[1]] : [0, 2, 5, 9, 14][lv],
+      count: counts[id[1]],
     });
   }
   if (!cells.length) throw new Error('No contribution cells found');
@@ -263,6 +266,7 @@ ${stars}
     console.warn('city generation: live fetch failed (' + e.message + '), checking existing city.svg');
     if (fs.existsSync(OUT)) {
       console.log('kept existing ' + OUT);
+      process.exitCode = 1;
     } else {
       process.exit(1);
     }

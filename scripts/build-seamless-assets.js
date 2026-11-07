@@ -35,15 +35,64 @@ function generateStars(count, width, height, seed = 42) {
 }
 
 function generateShootingStars() {
+  const count = 7;
+  const cycle = 48;
+  const trajectories = [
+    { x: -28, y: -8, dx: 290, dy: 190 },
+    { x: 112, y: 8, dx: 310, dy: 192 },
+    { x: 248, y: -16, dx: 300, dy: 196 },
+    { x: 390, y: 4, dx: 315, dy: 188 },
+    { x: 532, y: -12, dx: 300, dy: 194 },
+    { x: 674, y: 10, dx: 310, dy: 190 },
+    { x: 816, y: -6, dx: 270, dy: 188 },
+  ];
+  let state = 731;
+  const rnd = () => {
+    state = (state * 16807) % 2147483647;
+    return (state - 1) / 2147483646;
+  };
+
+  const gradients = [];
+  const instances = trajectories.map((start, i) => {
+    // Stratified positions cover the full width; seeded jitter keeps the layout varied and reproducible.
+    const x = start.x + (rnd() - 0.5) * 42;
+    const y = start.y + (rnd() - 0.5) * 16;
+    const dx = start.dx + (rnd() - 0.5) * 36;
+    const dy = start.dy + (rnd() - 0.5) * 20;
+    const phase = (i * cycle / count + rnd() * 0.55).toFixed(2);
+    const moveEnd = (0.18 + rnd() * 0.012).toFixed(3);
+    const brightness = (0.68 + rnd() * 0.24).toFixed(2);
+    const trailLength = 58 + rnd() * 24;
+    const tailX = (46 - trailLength).toFixed(1);
+    const tailY = (46 - trailLength * 0.56).toFixed(1);
+    const warm = i % 2 === 0;
+    const color = warm ? '#ffca72' : '#7dd3fc';
+    const midColor = warm ? '#ffe3a8' : '#bae6fd';
+    const gradientId = `comet-tail-${i}`;
+
+    gradients.push(`<linearGradient id="${gradientId}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0"/><stop offset=".72" stop-color="${midColor}" stop-opacity=".38"/><stop offset="1" stop-color="#ffffff" stop-opacity="1"/></linearGradient>`);
+
+    return `
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;.08;${moveEnd};1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;.06;.08;.14;.19;1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="${color}" opacity=".28" filter="url(#comet-glow)"/>
+    <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="${color}" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#comet-glow)"/>
+    <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="url(#${gradientId})" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>`;
+  }).join('');
+
   return `
-  <path d="M120 40 l -34 18" stroke="#8b949e" stroke-width=".8" opacity="0">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 160 84" dur="7.5s" begin="-1.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;.55;0" dur="7.5s" begin="-1.5s" repeatCount="indefinite"/>
-  </path>
-  <path d="M780 70 l -34 18" stroke="#8b949e" stroke-width=".8" opacity="0">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 160 84" dur="10.0s" begin="-5.0s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;.55;0" dur="10.0s" begin="-5.0s" repeatCount="indefinite"/>
-  </path>`;
+  <defs>
+    <clipPath id="sky-clip"><rect width="1000" height="250"/></clipPath>
+    ${gradients.join('\n    ')}
+    <filter id="comet-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+  </defs>
+  <g class="shooting-stars" clip-path="url(#sky-clip)">${instances}
+  </g>`;
 }
 
 // -------------------------------------------------------------
@@ -61,7 +110,7 @@ function buildBanner() {
     text { font-family: Inter, -apple-system, 'Segoe UI', Arial, sans-serif; }
     .rise { animation: rise .8s ease-out both; }
     @keyframes rise { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { .rise { animation: none !important; } }
+    @media (prefers-reduced-motion: reduce) { .rise { animation: none !important; } .shooting-stars { display: none !important; } }
   </style>
 </defs>
 
