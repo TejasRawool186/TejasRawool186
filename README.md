@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://tejasrawool.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="assets/btn-portfolio.svg" height="40" alt="Portfolio" /></a>
   <a href="https://www.linkedin.com/in/tejasrawool186/" target="_blank" rel="noopener noreferrer"><img src="assets/btn-linkedin.svg" height="40" alt="LinkedIn" /></a>
-  <a href="mailto:tejasrawool986@gmail.com"><img src="assets/btn-email.svg" height="40" alt="Email" /></a>
+  <a href="mailto:tejasrawool986@gmail.com" target="_blank" rel="noopener noreferrer"><img src="assets/btn-email.svg" height="40" alt="Email" /></a>
   <a href="https://dev.to/tejasrawool186" target="_blank" rel="noopener noreferrer"><img src="assets/btn-devto.svg" height="40" alt="DEV.to" /></a>
   <a href="https://x.com/TejasRawool186" target="_blank" rel="noopener noreferrer"><img src="assets/btn-x.svg" height="40" alt="X" /></a>
   <a href="https://www.reddit.com/user/Competitive-Fun-6252/" target="_blank" rel="noopener noreferrer"><img src="assets/btn-reddit.svg" height="40" alt="Reddit" /></a>

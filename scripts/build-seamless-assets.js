@@ -35,40 +35,45 @@ function generateStars(count, width, height, seed = 42) {
 }
 
 function generateShootingStars() {
-  const cycle = 32;
-  const trajectories = [
-    { x: -28, y: -8, dx: 290, dy: 190 },
-    { x: 65, y: 6, dx: 300, dy: 182 },
-    { x: 158, y: -14, dx: 285, dy: 194 },
-    { x: 251, y: 4, dx: 310, dy: 188 },
-    { x: 344, y: -10, dx: 290, dy: 198 },
-    { x: 437, y: 8, dx: 310, dy: 188 },
-    { x: 530, y: -15, dx: 300, dy: 194 },
-    { x: 623, y: 2, dx: 315, dy: 190 },
-    { x: 716, y: -12, dx: 290, dy: 198 },
-    { x: 809, y: 7, dx: 270, dy: 184 },
-  ];
-  const count = trajectories.length;
+  const cycle = 128;
+  const starSlots = 10;
+  const passesPerSlot = 4;
+  const count = starSlots * passesPerSlot;
+  const eventSpacing = 3;
+  const eventOffset = 1;
   let state = 731;
   const rnd = () => {
     state = (state * 16807) % 2147483647;
     return (state - 1) / 2147483646;
   };
 
+  // Shuffle evenly spaced launch zones so each appearance starts somewhere new
+  // while the full sequence still covers the entire banner.
+  const zones = Array.from({ length: count }, (_, i) => i);
+  for (let i = zones.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [zones[i], zones[j]] = [zones[j], zones[i]];
+  }
+
   const gradients = [];
-  const instances = trajectories.map((start, i) => {
-    // Stratified positions cover the full width; seeded jitter keeps the layout varied and reproducible.
-    const x = start.x + (rnd() - 0.5) * 42;
-    const y = start.y + (rnd() - 0.5) * 16;
-    const dx = start.dx + (rnd() - 0.5) * 36;
-    const dy = start.dy + (rnd() - 0.5) * 20;
-    const phase = (i * cycle / count + rnd() * 0.55).toFixed(2);
-    const moveEnd = (0.125 + rnd() * 0.015).toFixed(3);
+  const instances = Array.from({ length: count }, (_, i) => {
+    const zone = zones[i];
+    const x = -48 + zone * (930 / (count - 1)) + (rnd() - 0.5) * 42;
+    const y = -14 + rnd() * 32;
+    const dx = 258 + rnd() * 58;
+    const dy = 176 + rnd() * 28;
+    const eventStart = eventOffset + i * eventSpacing;
+    const moveEnd = eventStart + 2.15 + rnd() * 0.45;
+    const fadeInStart = Math.max(0, eventStart - 0.35);
+    const fadeInEnd = eventStart + 0.2 + rnd() * 0.1;
+    const fadeOutStart = eventStart + 1.9;
+    const fadeEnd = eventStart + 2.75;
+    const at = (seconds) => (seconds / cycle).toFixed(5);
     const brightness = (0.68 + rnd() * 0.24).toFixed(2);
     const trailLength = 58 + rnd() * 24;
     const tailX = (46 - trailLength).toFixed(1);
     const tailY = (46 - trailLength * 0.56).toFixed(1);
-    const warm = i % 2 === 0;
+    const warm = rnd() < 0.5;
     const color = warm ? '#ffca72' : '#7dd3fc';
     const midColor = warm ? '#ffe3a8' : '#bae6fd';
     const gradientId = `comet-tail-${i}`;
@@ -77,8 +82,8 @@ function generateShootingStars() {
 
     return `
   <g opacity="0">
-    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;.055;${moveEnd};1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;.04;.055;.12;.16;1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;${at(eventStart)};${at(moveEnd)};1" dur="${cycle}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;${at(fadeInStart)};${at(fadeInEnd)};${at(fadeOutStart)};${at(fadeEnd)};1" dur="${cycle}s" repeatCount="indefinite"/>
     <circle cx="46" cy="46" r="3.2" fill="${color}" opacity=".28" filter="url(#comet-glow)"/>
     <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="${color}" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#comet-glow)"/>
     <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="url(#${gradientId})" stroke-width="0.85" stroke-linecap="round"/>
