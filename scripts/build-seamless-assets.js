@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { renderShootingStars, SECTION_OFFSETS } = require('./shooting-stars');
+const { renderShootingStars } = require('./shooting-stars');
 
 // Extract avatar from banner.svg if avatar-base64.txt not present
 let avatarBase64 = '';
@@ -35,13 +35,8 @@ function generateStars(count, width, height, seed = 42) {
   return s;
 }
 
-function withProfileStars(svg, offset, height, anchor) {
-  const startMarker = '<!-- PROFILE STARS START -->';
-  const endMarker = '<!-- PROFILE STARS END -->';
-  const cleanSvg = svg.replace(/<!-- PROFILE STARS START -->[\s\S]*?<!-- PROFILE STARS END -->\r?\n?/g, '');
-  if (!cleanSvg.includes(anchor)) throw new Error(`Could not find star insertion point: ${anchor}`);
-  const block = `${startMarker}\n${renderShootingStars(offset, height)}\n${endMarker}\n\n`;
-  return cleanSvg.replace(anchor, `${block}${anchor}`);
+function removeProfileStars(svg) {
+  return svg.replace(/<!-- PROFILE STARS START -->[\s\S]*?<!-- PROFILE STARS END -->\r?\n?/g, '');
 }
 
 // -------------------------------------------------------------
@@ -51,7 +46,7 @@ function buildBanner() {
   const W = 1000;
   const H = 250;
   const stars = generateStars(50, W, H, 101);
-  const shootingStars = renderShootingStars(SECTION_OFFSETS.banner, H);
+  const shootingStars = renderShootingStars(H);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Tejas Rawool — Full Stack Developer and AI Engineer">
 <defs>
@@ -92,7 +87,7 @@ ${shootingStars}
 // -------------------------------------------------------------
 function buildStack() {
   const svg = fs.readFileSync('assets/stack.svg', 'utf8');
-  return withProfileStars(svg, SECTION_OFFSETS.stack, 340, '<!-- Integrated Header (Zero Dividers) -->');
+  return removeProfileStars(svg);
 }
 
 // -------------------------------------------------------------
@@ -108,10 +103,10 @@ function buildCity() {
 // -------------------------------------------------------------
 function buildFooter() {
   const svg = fs.readFileSync('assets/footer.svg', 'utf8');
-  return withProfileStars(svg, SECTION_OFFSETS.footer, 72, '<!-- Motivational Footer Pill -->');
+  return removeProfileStars(svg);
 }
 
 fs.writeFileSync('assets/banner.svg', buildBanner());
 fs.writeFileSync('assets/stack.svg', buildStack());
 fs.writeFileSync('assets/footer.svg', buildFooter());
-console.log('Built banner, stack, and footer SVGs with synchronized profile stars.');
+console.log('Built banner stars and restored static stack/footer backgrounds.');

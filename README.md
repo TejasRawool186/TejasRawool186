@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Tejas Rawool — Full Stack Developer and AI Engineer" loading="eager" />
+  <img src="assets/banner.svg" width="100%" alt="Tejas Rawool — Full Stack Developer and AI Engineer" />
 </p>
 
 <p align="center">
@@ -12,13 +12,13 @@
 </p>
 
 <p align="center">
-  <img src="assets/stack.svg" width="100%" alt="Technical Stack" loading="eager" />
+  <img src="assets/stack.svg" width="100%" alt="Technical Stack" />
 </p>
 
 <p align="center">
-  <img src="assets/city.svg" width="100%" alt="Contribution City Skyline" loading="eager" />
+  <img src="assets/city.svg" width="100%" alt="Contribution City Skyline" />
 </p>
 
 <p align="center">
-  <img src="assets/footer.svg" width="100%" alt="Every project is a step toward something greater." loading="eager" />
+  <img src="assets/footer.svg" width="100%" alt="Every project is a step toward something greater." />
 </p>
