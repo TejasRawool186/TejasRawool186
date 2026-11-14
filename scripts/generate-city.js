@@ -177,6 +177,11 @@ function render(cells) {
     <stop offset="70%" stop-color="#39d353" stop-opacity="0.85"/>
     <stop offset="100%" stop-color="#39d353" stop-opacity="0.1"/>
   </linearGradient>
+  <radialGradient id="horizonGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#39d353" stop-opacity="0.2"/>
+    <stop offset="48%" stop-color="#117b78" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+  </radialGradient>
   <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
     <feGaussianBlur stdDeviation="3" result="blur"/>
     <feMerge>
@@ -213,6 +218,9 @@ function render(cells) {
 
 <!-- Uniform Seamless Background -->
 <rect width="${W}" height="${H}" fill="${BG}"/>
+
+<!-- Soft horizon glow behind the contribution city -->
+<ellipse cx="500" cy="174" rx="510" ry="86" fill="url(#horizonGlow)"/>
 
 <!-- Twinkling Space Background -->
 ${stars}

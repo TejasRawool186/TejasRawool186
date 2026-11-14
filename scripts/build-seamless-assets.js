@@ -35,17 +35,20 @@ function generateStars(count, width, height, seed = 42) {
 }
 
 function generateShootingStars() {
-  const count = 7;
-  const cycle = 48;
+  const cycle = 32;
   const trajectories = [
     { x: -28, y: -8, dx: 290, dy: 190 },
-    { x: 112, y: 8, dx: 310, dy: 192 },
-    { x: 248, y: -16, dx: 300, dy: 196 },
-    { x: 390, y: 4, dx: 315, dy: 188 },
-    { x: 532, y: -12, dx: 300, dy: 194 },
-    { x: 674, y: 10, dx: 310, dy: 190 },
-    { x: 816, y: -6, dx: 270, dy: 188 },
+    { x: 65, y: 6, dx: 300, dy: 182 },
+    { x: 158, y: -14, dx: 285, dy: 194 },
+    { x: 251, y: 4, dx: 310, dy: 188 },
+    { x: 344, y: -10, dx: 290, dy: 198 },
+    { x: 437, y: 8, dx: 310, dy: 188 },
+    { x: 530, y: -15, dx: 300, dy: 194 },
+    { x: 623, y: 2, dx: 315, dy: 190 },
+    { x: 716, y: -12, dx: 290, dy: 198 },
+    { x: 809, y: 7, dx: 270, dy: 184 },
   ];
+  const count = trajectories.length;
   let state = 731;
   const rnd = () => {
     state = (state * 16807) % 2147483647;
@@ -60,7 +63,7 @@ function generateShootingStars() {
     const dx = start.dx + (rnd() - 0.5) * 36;
     const dy = start.dy + (rnd() - 0.5) * 20;
     const phase = (i * cycle / count + rnd() * 0.55).toFixed(2);
-    const moveEnd = (0.18 + rnd() * 0.012).toFixed(3);
+    const moveEnd = (0.125 + rnd() * 0.015).toFixed(3);
     const brightness = (0.68 + rnd() * 0.24).toFixed(2);
     const trailLength = 58 + rnd() * 24;
     const tailX = (46 - trailLength).toFixed(1);
@@ -74,8 +77,8 @@ function generateShootingStars() {
 
     return `
   <g opacity="0">
-    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;.08;${moveEnd};1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;.06;.08;.14;.19;1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;.055;${moveEnd};1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;.04;.055;.12;.16;1" dur="${cycle}s" begin="-${phase}s" repeatCount="indefinite"/>
     <circle cx="46" cy="46" r="3.2" fill="${color}" opacity=".28" filter="url(#comet-glow)"/>
     <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="${color}" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#comet-glow)"/>
     <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="url(#${gradientId})" stroke-width="0.85" stroke-linecap="round"/>
