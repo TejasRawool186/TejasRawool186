@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { renderShootingStars, SECTION_OFFSETS } = require('./shooting-stars');
 
 // Extract avatar from banner.svg if avatar-base64.txt not present
 let avatarBase64 = '';
@@ -34,73 +35,13 @@ function generateStars(count, width, height, seed = 42) {
   return s;
 }
 
-function generateShootingStars() {
-  const cycle = 128;
-  const starSlots = 10;
-  const passesPerSlot = 4;
-  const count = starSlots * passesPerSlot;
-  const eventSpacing = 3;
-  const eventOffset = 1;
-  let state = 731;
-  const rnd = () => {
-    state = (state * 16807) % 2147483647;
-    return (state - 1) / 2147483646;
-  };
-
-  // Shuffle evenly spaced launch zones so each appearance starts somewhere new
-  // while the full sequence still covers the entire banner.
-  const zones = Array.from({ length: count }, (_, i) => i);
-  for (let i = zones.length - 1; i > 0; i--) {
-    const j = Math.floor(rnd() * (i + 1));
-    [zones[i], zones[j]] = [zones[j], zones[i]];
-  }
-
-  const gradients = [];
-  const instances = Array.from({ length: count }, (_, i) => {
-    const zone = zones[i];
-    const x = -48 + zone * (930 / (count - 1)) + (rnd() - 0.5) * 42;
-    const y = -14 + rnd() * 32;
-    const dx = 258 + rnd() * 58;
-    const dy = 176 + rnd() * 28;
-    const eventStart = eventOffset + i * eventSpacing;
-    const moveEnd = eventStart + 2.15 + rnd() * 0.45;
-    const fadeInStart = Math.max(0, eventStart - 0.35);
-    const fadeInEnd = eventStart + 0.2 + rnd() * 0.1;
-    const fadeOutStart = eventStart + 1.9;
-    const fadeEnd = eventStart + 2.75;
-    const at = (seconds) => (seconds / cycle).toFixed(5);
-    const brightness = (0.68 + rnd() * 0.24).toFixed(2);
-    const trailLength = 58 + rnd() * 24;
-    const tailX = (46 - trailLength).toFixed(1);
-    const tailY = (46 - trailLength * 0.56).toFixed(1);
-    const warm = rnd() < 0.5;
-    const color = warm ? '#ffca72' : '#7dd3fc';
-    const midColor = warm ? '#ffe3a8' : '#bae6fd';
-    const gradientId = `comet-tail-${i}`;
-
-    gradients.push(`<linearGradient id="${gradientId}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0"/><stop offset=".72" stop-color="${midColor}" stop-opacity=".38"/><stop offset="1" stop-color="#ffffff" stop-opacity="1"/></linearGradient>`);
-
-    return `
-  <g opacity="0">
-    <animateTransform attributeName="transform" type="translate" values="${x.toFixed(1)} ${y.toFixed(1)}; ${x.toFixed(1)} ${y.toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}; ${(x + dx).toFixed(1)} ${(y + dy).toFixed(1)}" keyTimes="0;${at(eventStart)};${at(moveEnd)};1" dur="${cycle}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0;${brightness};${brightness};0;0" keyTimes="0;${at(fadeInStart)};${at(fadeInEnd)};${at(fadeOutStart)};${at(fadeEnd)};1" dur="${cycle}s" repeatCount="indefinite"/>
-    <circle cx="46" cy="46" r="3.2" fill="${color}" opacity=".28" filter="url(#comet-glow)"/>
-    <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="${color}" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#comet-glow)"/>
-    <path d="M46 46 L${tailX} ${tailY}" fill="none" stroke="url(#${gradientId})" stroke-width="0.85" stroke-linecap="round"/>
-    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
-  </g>`;
-  }).join('');
-
-  return `
-  <defs>
-    <clipPath id="sky-clip"><rect width="1000" height="250"/></clipPath>
-    ${gradients.join('\n    ')}
-    <filter id="comet-glow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="2.2"/>
-    </filter>
-  </defs>
-  <g class="shooting-stars" clip-path="url(#sky-clip)">${instances}
-  </g>`;
+function withProfileStars(svg, offset, height, anchor) {
+  const startMarker = '<!-- PROFILE STARS START -->';
+  const endMarker = '<!-- PROFILE STARS END -->';
+  const cleanSvg = svg.replace(/<!-- PROFILE STARS START -->[\s\S]*?<!-- PROFILE STARS END -->\r?\n?/g, '');
+  if (!cleanSvg.includes(anchor)) throw new Error(`Could not find star insertion point: ${anchor}`);
+  const block = `${startMarker}\n${renderShootingStars(offset, height)}\n${endMarker}\n\n`;
+  return cleanSvg.replace(anchor, `${block}${anchor}`);
 }
 
 // -------------------------------------------------------------
@@ -110,7 +51,7 @@ function buildBanner() {
   const W = 1000;
   const H = 250;
   const stars = generateStars(50, W, H, 101);
-  const shootingStars = generateShootingStars();
+  const shootingStars = renderShootingStars(SECTION_OFFSETS.banner, H);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Tejas Rawool — Full Stack Developer and AI Engineer">
 <defs>
@@ -150,8 +91,8 @@ ${shootingStars}
 // 2. STACK.SVG — Seamless Uniform Background
 // -------------------------------------------------------------
 function buildStack() {
-  // Read existing stack.svg content
-  return fs.readFileSync('assets/stack.svg', 'utf8');
+  const svg = fs.readFileSync('assets/stack.svg', 'utf8');
+  return withProfileStars(svg, SECTION_OFFSETS.stack, 340, '<!-- Integrated Header (Zero Dividers) -->');
 }
 
 // -------------------------------------------------------------
@@ -166,8 +107,11 @@ function buildCity() {
 // 4. FOOTER.SVG — Seamless Terminal Pill
 // -------------------------------------------------------------
 function buildFooter() {
-  return fs.readFileSync('assets/footer.svg', 'utf8');
+  const svg = fs.readFileSync('assets/footer.svg', 'utf8');
+  return withProfileStars(svg, SECTION_OFFSETS.footer, 72, '<!-- Motivational Footer Pill -->');
 }
 
 fs.writeFileSync('assets/banner.svg', buildBanner());
-console.log('Built assets/banner.svg (centered hero without avatar).');
+fs.writeFileSync('assets/stack.svg', buildStack());
+fs.writeFileSync('assets/footer.svg', buildFooter());
+console.log('Built banner, stack, and footer SVGs with synchronized profile stars.');

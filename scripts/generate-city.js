@@ -9,6 +9,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { renderShootingStars, SECTION_OFFSETS } = require('./shooting-stars');
 
 const USER = process.env.GH_USER || 'tejasrawool186';
 const OUT = process.env.OUT || path.join(__dirname, '..', 'assets', 'city.svg');
@@ -159,6 +160,7 @@ function render(cells) {
     const op = (0.2 + R() * 0.5).toFixed(2);
     stars += `<circle cx="${sx}" cy="${sy}" r="${sr}" fill="#c9d1d9" opacity="${op}"/>`;
   }
+  const profileStars = renderShootingStars(SECTION_OFFSETS.city, H);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Contribution City 3D for ${USER}">
 <defs>
@@ -224,6 +226,9 @@ function render(cells) {
 
 <!-- Twinkling Space Background -->
 ${stars}
+
+<!-- Synchronized meteors continue through the README panels -->
+${profileStars}
 
 <!-- Header: ─── ✦ Contribution City ✦ ─── -->
 <g>

@@ -59,6 +59,341 @@
 <circle cx="930.0" cy="32.0" r="0.8" fill="#c9d1d9" opacity="0.45"><animate attributeName="opacity" values="0.45;0.70;0.45" dur="3.8s" begin="-1.5s" repeatCount="indefinite"/></circle>
 
 
+
+
+<!-- PROFILE STARS START -->
+
+  <defs>
+    <clipPath id="shared-comet-clip"><rect width="1000" height="72"/></clipPath>
+    <linearGradient id="shared-comet-tail-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffca72" stop-opacity="0"/><stop offset=".72" stop-color="#ffe3a8" stop-opacity=".38"/><stop offset="1" stop-color="#ffffff" stop-opacity="1"/></linearGradient>
+    <linearGradient id="shared-comet-tail-blue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7dd3fc" stop-opacity="0"/><stop offset=".72" stop-color="#bae6fd" stop-opacity=".38"/><stop offset="1" stop-color="#ffffff" stop-opacity="1"/></linearGradient>
+    <filter id="shared-comet-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <style>@media (prefers-reduced-motion: reduce) { .shooting-stars { display: none !important; } }</style>
+  </defs>
+  <g class="shooting-stars" clip-path="url(#shared-comet-clip)">
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="702.2 -1118.0; 702.2 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.00319;0.05372;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.76;0.76;0;0" keyTimes="0;0.00319;0.00584;0.03723;0.05143;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.2 10.0" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.2 10.0" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="511.7 -1118.0; 511.7 -1118.0; 793.8 124.0; 793.8 124.0" keyTimes="0;0.02660;0.07713;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.66;0.66;0;0" keyTimes="0;0.02660;0.02936;0.06064;0.07424;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.3 10.5" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.3 10.5" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="471.6 -1118.0; 471.6 -1118.0; 743.8 124.0; 743.8 124.0" keyTimes="0;0.05000;0.10053;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.63;0.63;0;0" keyTimes="0;0.05000;0.05316;0.08404;0.09915;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.1 5.0" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.1 5.0" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="293.0 -1118.0; 293.0 -1118.0; 583.6 124.0; 583.6 124.0" keyTimes="0;0.07340;0.12394;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.64;0.64;0;0" keyTimes="0;0.07340;0.07623;0.10745;0.12152;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-14.3 12.2" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-14.3 12.2" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="547.5 -1118.0; 547.5 -1118.0; 839.0 124.0; 839.0 124.0" keyTimes="0;0.09681;0.14734;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.79;0.79;0;0" keyTimes="0;0.09681;0.10017;0.13085;0.14446;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.1 6.2" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.1 6.2" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="568.5 -1118.0; 568.5 -1118.0; 829.4 124.0; 829.4 124.0" keyTimes="0;0.12021;0.17074;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.75;0.75;0;0" keyTimes="0;0.12021;0.12352;0.15426;0.16928;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-12.5 13.3" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-12.5 13.3" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="348.0 -1118.0; 348.0 -1118.0; 617.9 124.0; 617.9 124.0" keyTimes="0;0.14362;0.19415;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.63;0.63;0;0" keyTimes="0;0.14362;0.14629;0.17766;0.19287;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.3 11.1" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.3 11.1" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="623.9 -1118.0; 623.9 -1118.0; 888.6 124.0; 888.6 124.0" keyTimes="0;0.16702;0.21755;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.73;0.73;0;0" keyTimes="0;0.16702;0.16991;0.20106;0.21683;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.9 10.8" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.9 10.8" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="203.6 -1118.0; 203.6 -1118.0; 436.7 124.0; 436.7 124.0" keyTimes="0;0.19043;0.24096;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.75;0.75;0;0" keyTimes="0;0.19043;0.19297;0.22447;0.24012;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.5 3.2" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.5 3.2" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="56.1 -1118.0; 56.1 -1118.0; 301.8 124.0; 301.8 124.0" keyTimes="0;0.21383;0.26436;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.73;0.73;0;0" keyTimes="0;0.21383;0.21662;0.24787;0.26354;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-15.9 11.3" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-15.9 11.3" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="433.7 -1118.0; 433.7 -1118.0; 680.6 124.0; 680.6 124.0" keyTimes="0;0.23723;0.28777;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.61;0.61;0;0" keyTimes="0;0.23723;0.23963;0.27128;0.28580;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.4 3.2" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.4 3.2" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-17.4 -1118.0; -17.4 -1118.0; 244.8 124.0; 244.8 124.0" keyTimes="0;0.26064;0.31117;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.71;0.71;0;0" keyTimes="0;0.26064;0.26351;0.29468;0.30906;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-29.4 3.8" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-29.4 3.8" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="607.2 -1118.0; 607.2 -1118.0; 881.9 124.0; 881.9 124.0" keyTimes="0;0.28404;0.33457;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.68;0.68;0;0" keyTimes="0;0.28404;0.28737;0.31809;0.33309;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.6 10.4" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.6 10.4" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="387.6 -1118.0; 387.6 -1118.0; 663.1 124.0; 663.1 124.0" keyTimes="0;0.30745;0.35798;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.59;0.59;0;0" keyTimes="0;0.30745;0.31079;0.34149;0.35521;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-22.3 7.8" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-22.3 7.8" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="768.7 -1118.0; 768.7 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.33085;0.38138;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.69;0.69;0;0" keyTimes="0;0.33085;0.33337;0.36489;0.37934;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.0 6.2" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.0 6.2" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="652.0 -1118.0; 652.0 -1118.0; 942.8 124.0; 942.8 124.0" keyTimes="0;0.35426;0.40479;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.66;0.66;0;0" keyTimes="0;0.35426;0.35736;0.38830;0.40411;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-14.5 12.1" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-14.5 12.1" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="530.5 -1118.0; 530.5 -1118.0; 753.3 124.0; 753.3 124.0" keyTimes="0;0.37766;0.42819;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.84;0.84;0;0" keyTimes="0;0.37766;0.38008;0.41170;0.42616;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.0 5.1" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.0 5.1" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="157.5 -1118.0; 157.5 -1118.0; 372.1 124.0; 372.1 124.0" keyTimes="0;0.40106;0.45160;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.73;0.73;0;0" keyTimes="0;0.40106;0.40364;0.43511;0.44932;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.8 5.8" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-25.8 5.8" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="842.2 -1118.0; 842.2 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.42447;0.47500;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.82;0.82;0;0" keyTimes="0;0.42447;0.42773;0.45851;0.47354;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-33.6 1.4" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-33.6 1.4" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="18.1 -1118.0; 18.1 -1118.0; 284.8 124.0; 284.8 124.0" keyTimes="0;0.44787;0.49840;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.84;0.84;0;0" keyTimes="0;0.44787;0.45127;0.48191;0.49563;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.4 3.2" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.4 3.2" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="676.0 -1118.0; 676.0 -1118.0; 936.2 124.0; 936.2 124.0" keyTimes="0;0.47128;0.52181;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.59;0.59;0;0" keyTimes="0;0.47128;0.47434;0.50532;0.51969;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-20.5 8.8" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-20.5 8.8" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="836.3 -1118.0; 836.3 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.49468;0.54521;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.71;0.71;0;0" keyTimes="0;0.49468;0.49797;0.52872;0.54298;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-32.5 2.0" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-32.5 2.0" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="486.3 -1118.0; 486.3 -1118.0; 748.5 124.0; 748.5 124.0" keyTimes="0;0.51809;0.56862;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.72;0.72;0;0" keyTimes="0;0.51809;0.52144;0.55213;0.56677;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-15.6 11.5" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-15.6 11.5" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="278.8 -1118.0; 278.8 -1118.0; 520.2 124.0; 520.2 124.0" keyTimes="0;0.54149;0.59202;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.65;0.65;0;0" keyTimes="0;0.54149;0.54452;0.57553;0.59072;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-23.8 6.9" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-23.8 6.9" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="55.7 -1118.0; 55.7 -1118.0; 326.8 124.0; 326.8 124.0" keyTimes="0;0.56489;0.61543;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.78;0.78;0;0" keyTimes="0;0.56489;0.56798;0.59894;0.61389;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-28.0 4.5" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-28.0 4.5" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="734.8 -1118.0; 734.8 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.58830;0.63883;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.63;0.63;0;0" keyTimes="0;0.58830;0.59104;0.62234;0.63705;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-35.0 0.7" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-35.0 0.7" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="120.4 -1118.0; 120.4 -1118.0; 399.3 124.0; 399.3 124.0" keyTimes="0;0.61170;0.66223;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.69;0.69;0;0" keyTimes="0;0.61170;0.61479;0.64574;0.66053;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-13.8 12.5" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-13.8 12.5" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="238.7 -1118.0; 238.7 -1118.0; 454.6 124.0; 454.6 124.0" keyTimes="0;0.63511;0.68564;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.74;0.74;0;0" keyTimes="0;0.63511;0.63852;0.66915;0.68416;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.0 3.4" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.0 3.4" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="406.4 -1118.0; 406.4 -1118.0; 671.8 124.0; 671.8 124.0" keyTimes="0;0.65851;0.70904;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.64;0.64;0;0" keyTimes="0;0.65851;0.66095;0.69255;0.70803;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-21.1 8.4" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-21.1 8.4" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="789.7 -1118.0; 789.7 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.68191;0.73245;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.67;0.67;0;0" keyTimes="0;0.68191;0.68530;0.71596;0.73101;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.8 9.7" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.8 9.7" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="691.8 -1118.0; 691.8 -1118.0; 945.3 124.0; 945.3 124.0" keyTimes="0;0.70532;0.75585;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.76;0.76;0;0" keyTimes="0;0.70532;0.70840;0.73936;0.75369;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-19.7 9.2" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-19.7 9.2" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="377.9 -1118.0; 377.9 -1118.0; 637.0 124.0; 637.0 124.0" keyTimes="0;0.72872;0.77926;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.64;0.64;0;0" keyTimes="0;0.72872;0.73117;0.76277;0.77734;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.9 3.0" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-30.9 3.0" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="143.1 -1118.0; 143.1 -1118.0; 401.9 124.0; 401.9 124.0" keyTimes="0;0.75213;0.80266;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.61;0.61;0;0" keyTimes="0;0.75213;0.75475;0.78617;0.80051;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.1 10.1" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-18.1 10.1" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="793.6 -1118.0; 793.6 -1118.0; 958.0 124.0; 958.0 124.0" keyTimes="0;0.77553;0.82606;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.83;0.83;0;0" keyTimes="0;0.77553;0.77897;0.80957;0.82504;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.1 5.1" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-27.1 5.1" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-14.7 -1118.0; -14.7 -1118.0; 277.1 124.0; 277.1 124.0" keyTimes="0;0.79894;0.84947;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.65;0.65;0;0" keyTimes="0;0.79894;0.80160;0.83298;0.84843;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.4 10.5" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-17.4 10.5" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="318.7 -1118.0; 318.7 -1118.0; 550.7 124.0; 550.7 124.0" keyTimes="0;0.82234;0.87287;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.67;0.67;0;0" keyTimes="0;0.82234;0.82553;0.85638;0.87005;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-19.2 9.5" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-19.2 9.5" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="177.6 -1118.0; 177.6 -1118.0; 405.8 124.0; 405.8 124.0" keyTimes="0;0.84574;0.89628;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.66;0.66;0;0" keyTimes="0;0.84574;0.84919;0.87979;0.89517;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-21.3 8.3" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-21.3 8.3" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="259.3 -1118.0; 259.3 -1118.0; 567.0 124.0; 567.0 124.0" keyTimes="0;0.86915;0.91968;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.69;0.69;0;0" keyTimes="0;0.86915;0.87256;0.90319;0.91771;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#ffca72" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-12.9 13.0" fill="none" stroke="#ffca72" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-12.9 13.0" fill="none" stroke="url(#shared-comet-tail-gold)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="85.2 -1118.0; 85.2 -1118.0; 389.4 124.0; 389.4 124.0" keyTimes="0;0.89255;0.94309;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.80;0.80;0;0" keyTimes="0;0.89255;0.89498;0.92660;0.94155;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-22.5 7.6" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-22.5 7.6" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  <g opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-37.4 -1118.0; -37.4 -1118.0; 254.6 124.0; 254.6 124.0" keyTimes="0;0.91596;0.96649;1" dur="188s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.73;0.73;0;0" keyTimes="0;0.91596;0.91940;0.95000;0.96568;1" dur="188s" repeatCount="indefinite"/>
+    <circle cx="46" cy="46" r="3.2" fill="#7dd3fc" opacity=".28" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.6 10.9" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity=".18" filter="url(#shared-comet-glow)"/>
+    <path d="M46 46 L-16.6 10.9" fill="none" stroke="url(#shared-comet-tail-blue)" stroke-width="0.85" stroke-linecap="round"/>
+    <circle cx="46" cy="46" r="1.2" fill="#ffffff"/>
+  </g>
+  </g>
+<!-- PROFILE STARS END -->
+
 <!-- Motivational Footer Pill -->
 <g class="rise footer-pill">
   <!-- Glowing Breathing Border -->
